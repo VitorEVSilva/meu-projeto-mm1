@@ -1,0 +1,164 @@
+.calculator-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+}
+
+.calculator-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: bold;
+}
+
+.input-group input {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.calculate-button { /* Removido do JS, mas pode ser re-adicionado se preferir cálculo por botão */
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 1rem;
+}
+
+.calculate-button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: #d9534f;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.results-grid {
+    margin-top: 2rem;
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+}
+
+.results-grid h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-item strong {
+    color: #555;
+}
+
+.result-item span {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* ... (estilos anteriores) ... */
+
+.info-text { /* Estilo para a nota sobre n e k derivados */
+    font-size: 0.9em;
+    color: #666;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.info-text sub { /* Ajuste para subscritos dentro do info-text se necessário */
+    font-size: 0.8em;
+}
+
+.results-grid h3 {
+    margin-bottom: 0.5rem; /* Ajuste o espaçamento se a nota for adicionada */
+    color: #333;
+}
+
+.result-item {
+    display: flex;
+    flex-direction: column; /* Empilha o valor e a fórmula verticalmente */
+    /* justify-content: space-between; Removido pois flex-direction: column cuida do alinhamento primário */
+    align-items: stretch; /* Faz os filhos esticarem para preencher a largura */
+    padding: 0.6rem 0; /* Ajuste o padding vertical */
+    border-bottom: 1px dashed #eee;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-label-value {
+    display: flex;
+    justify-content: space-between; /* Mantém o nome à esquerda e o valor à direita */
+    align-items: center; /* Alinha verticalmente se o texto quebrar linha */
+    width: 100%;
+}
+
+.result-item strong {
+    color: #555;
+    margin-right: 8px; /* Espaço entre o nome da métrica e o valor */
+    flex-shrink: 0; /* Evita que o nome da métrica encolha demais */
+}
+
+.result-item span { /* Valor da métrica */
+    font-weight: bold;
+    color: #007bff;
+    text-align: right;
+    flex-grow: 1; /* Permite que o valor ocupe o espaço restante */
+}
+
+.formula-text {
+    font-size: 0.85em; /* Tamanho um pouco menor para a fórmula */
+    color: #777;       /* Cor mais suave */
+    text-align: right;  /* Alinha a fórmula à direita, abaixo do valor */
+    margin-top: 0.3rem; /* Pequeno espaço acima da fórmula */
+    font-style: italic; /* Opcional: estilo itálico para a fórmula */
+    padding-left: 20px; /* Para evitar sobreposição com nomes de métricas longos */
+}
+
+.formula-text sub, .formula-text sup { /* Ajusta o tamanho de sub/sup na fórmula */
+    font-size: 0.8em;
+    line-height: 0; /* Ajuda a alinhar melhor com o texto base */
+}

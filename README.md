@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Simulador de Filas M/M/1 em React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📜 Visão Geral
 
-## Available Scripts
+Este projeto é um simulador interativo para o modelo de filas M/M/1, desenvolvido como parte de [Nome da Disciplina/Projeto Acadêmico] na [Sua Instituição]. A aplicação permite aos usuários inserir taxas de chegada (λ) e atendimento (μ) para calcular e visualizar diversas métricas de desempenho de um sistema de filas com um único servidor, chegadas de Poisson e tempos de serviço exponenciais.
 
-In the project directory, you can run:
+O modelo M/M/1 é fundamental na teoria das filas, representando um sistema onde:
+-   **M (Markoviano/Poisson):** O processo de chegada segue uma distribuição de Poisson (intervalos entre chegadas são exponenciais).
+-   **M (Markoviano/Exponencial):** O tempo de atendimento segue uma distribuição exponencial.
+-   **1:** Existe apenas um servidor no sistema.
 
-### `npm start`
+## ✨ Funcionalidades Principais
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-   **Entrada de Parâmetros:** Os usuários podem definir a taxa de chegada (λ) e a taxa de atendimento (μ).
+-   **Cálculo Dinâmico de Métricas:** Calcula automaticamente as seguintes métricas de desempenho:
+    -   Taxa de Utilização do Servidor (ρ)
+    -   Probabilidade do Sistema Estar Vazio ($P_0$)
+    -   Probabilidade de 'n' Clientes no Sistema ($P_n$), onde $n = \lfloor\lambda\rfloor$
+    -   Probabilidade de até 'k' Clientes no Sistema ($P(N \le k)$), onde $k = \lfloor\lambda\rfloor$
+    -   Número Médio de Clientes no Sistema (L)
+    -   Número Médio de Clientes na Fila ($L_q$)
+    -   Tempo Médio de Permanência de um Cliente no Sistema (W)
+    -   Tempo Médio de Permanência de um Cliente na Fila ($W_q$)
+-   **Exibição de Fórmulas:** Apresenta as fórmulas utilizadas para cada métrica calculada, auxiliando no entendimento.
+-   **Interface Reativa:** A interface do usuário é construída com React, proporcionando uma experiência fluida e interativa.
+-   **Validação de Entradas:** Garante que $\lambda < \mu$ para a estabilidade do sistema e que as taxas sejam positivas.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tecnologias Utilizadas
 
-### `npm test`
+-   **Frontend:**
+    -   React (v18+)
+    -   JavaScript (ES6+)
+    -   HTML5
+    -   CSS3
+-   **Versionamento:**
+    -   Git
+    -   GitHub
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ⚙️ Parâmetros e Métricas do Modelo M/M/1
 
-### `npm run build`
+### Parâmetros de Entrada:
+-   **Taxa de Chegada (λ):** Número médio de clientes que chegam ao sistema por unidade de tempo.
+-   **Taxa de Atendimento (μ):** Número médio de clientes que o servidor consegue atender por unidade de tempo.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Métricas Calculadas e Suas Fórmulas:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1.  **Taxa de Utilização (ρ):**
+    $$ \rho = \frac{\lambda}{\mu} $$
+2.  **Probabilidade de Sistema Vazio ($P_0$):**
+    $$ P_0 = 1 - \rho $$
+3.  **Probabilidade de n Clientes no Sistema ($P_n$):** (onde $n = \lfloor\lambda\rfloor$ é derivado da entrada λ)
+    $$ P_n = P_0 \cdot \rho^n $$
+4.  **Probabilidade de até k Clientes no Sistema ($P(N \le k)$):** (onde $k = \lfloor\lambda\rfloor$ é derivado da entrada λ)
+    $$ P(N \le k) = 1 - \rho^{k+1} $$
+5.  **Número Médio de Clientes no Sistema (L):**
+    $$ L = \frac{\lambda}{\mu - \lambda} $$
+6.  **Número Médio de Clientes na Fila ($L_q$):**
+    $$ L_q = L - \rho $$
+    Alternativamente: $L_q = \frac{\lambda^2}{\mu(\mu - \lambda)}$
+7.  **Tempo Médio de Permanência no Sistema (W):** (Lei de Little)
+    $$ W = \frac{L}{\lambda} $$
+    Alternativamente: $W = \frac{1}{\mu - \lambda}$
+8.  **Tempo Médio de Permanência na Fila ($W_q$):** (Lei de Little)
+    $$ W_q = \frac{L_q}{\lambda} $$
+    Alternativamente: $W_q = \frac{\lambda}{\mu(\mu - \lambda)}$
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
