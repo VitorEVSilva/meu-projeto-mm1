@@ -1,12 +1,8 @@
 # Simulador de Filas M/M/1 em React
 
 ## 📜 Visão Geral
-
-<<<<<<< HEAD
-Este projeto é um simulador interativo para o modelo de filas M/M/1, desenvolvido como parte de [Nome da Disciplina/Projeto Acadêmico] na [Sua Instituição]. A aplicação permite aos usuários inserir taxas de chegada (λ) e atendimento (μ) para calcular e visualizar diversas métricas de desempenho de um sistema de filas com um único servidor, chegadas de Poisson e tempos de serviço exponenciais.
-=======
 Este projeto é um simulador interativo para o modelo de filas M/M/1. A aplicação permite aos usuários inserir taxas de chegada (λ) e atendimento (μ) para calcular e visualizar diversas métricas de desempenho de um sistema de filas com um único servidor, chegadas de Poisson e tempos de serviço exponenciais.
->>>>>>> 0c501d65e89b65ea5786299c1fc62270e866a1da
+
 
 O modelo M/M/1 é fundamental na teoria das filas, representando um sistema onde:
 -   **M (Markoviano/Poisson):** O processo de chegada segue uma distribuição de Poisson (intervalos entre chegadas são exponenciais).
