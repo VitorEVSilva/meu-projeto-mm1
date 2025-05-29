@@ -1,19 +1,19 @@
 {
-  "short_name": "Mamutaum",
-  "name": "Mamutaum",
+  "short_name": "Mamutaum", // Você também pode querer mudar isso!
+  "name": "Calculadora M/M/1", // E isso!
   "icons": [
     {
-      "src": "mammoth-svgrepo-com.svg",
+      "src": "favicon.ico", // Caminho relativo à pasta public
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "logo192.png", // Caminho relativo à pasta public
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "logo512.png", // Caminho relativo à pasta public
       "type": "image/png",
       "sizes": "512x512"
     }
