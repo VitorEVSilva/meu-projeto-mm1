@@ -63,7 +63,7 @@ O modelo M/M/1 é fundamental na teoria das filas, representando um sistema onde
 8.  **Tempo Médio de Permanência na Fila ($W_q$):** (Lei de Little)
     $$ W_q = \frac{L_q}{\lambda} $$
     Alternativamente: $W_q = \frac{\lambda}{\mu(\mu - \lambda)}$
-<<<<<<< HEAD
 
-=======
->>>>>>> 0c501d65e89b65ea5786299c1fc62270e866a1da
+### Para Utilizar:
+
+- **Clique neste link:** https://vitorevsilva.github.io/meu-projeto-mm1/
