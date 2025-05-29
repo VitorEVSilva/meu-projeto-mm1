@@ -1,4 +1,4 @@
-#Mamutaum 🐘: Simulador de Filas M/M/1 em React
+##Mamutaum 🐘: Simulador de Filas M/M/1 em React
 
 ## 📜 Visão Geral
 Este projeto é um simulador interativo para o modelo de filas M/M/1. A aplicação permite aos usuários inserir taxas de chegada (λ) e atendimento (μ) para calcular e visualizar diversas métricas de desempenho de um sistema de filas com um único servidor, chegadas de Poisson e tempos de serviço exponenciais.
