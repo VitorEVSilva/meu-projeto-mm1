@@ -162,3 +162,13 @@
     font-size: 0.8em;
     line-height: 0; /* Ajuda a alinhar melhor com o texto base */
 }
+
+.calculation-steps {
+    font-size: 0.8em;  /* Ou 0.85em, como preferir */
+    color: #454d55;    /* Um cinza escuro, mas não tão claro quanto o da fórmula */
+    text-align: right;
+    margin-top: 0.3rem; /* Espaço acima desta linha */
+    margin-bottom: 0.1rem; /* Pequeno espaço antes do .formula-text */
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; /* Fonte monoespaçada */
+    padding-right: 2px; /* Similar ao .formula-text */
+}
